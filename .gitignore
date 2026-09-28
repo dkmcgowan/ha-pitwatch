@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+.venv/
+venv/
+
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Local Home Assistant test configuration
+config/
+!custom_components/
+
+# Local working notes, never published
+NOTES.md
+notes/
+*.local.md

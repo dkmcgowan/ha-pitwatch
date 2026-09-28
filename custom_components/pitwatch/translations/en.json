@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to PitWatch",
+        "description": "Make a token in PitWatch: open your profile page, find Home Assistant and other apps, pick the building, and press Make a token. Tick the box there if Home Assistant should be able to silence and reset the panel alarm.",
+        "data": {
+          "url": "PitWatch address",
+          "api_token": "Token"
+        },
+        "data_description": {
+          "url": "Leave this alone unless you run your own PitWatch.",
+          "api_token": "Starts with pw_. It is shown once, when it is made."
+        }
+      },
+      "reauth_confirm": {
+        "title": "PitWatch needs a new token",
+        "description": "PitWatch stopped accepting the token for {building}. It may have been revoked, or the account that made it lost access. Make a new one on your PitWatch profile page for the same building.",
+        "data": {
+          "api_token": "Token"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "PitWatch did not accept that token.",
+      "cannot_connect": "Could not reach PitWatch at that address.",
+      "unknown": "PitWatch answered in a way this did not expect."
+    },
+    "abort": {
+      "already_configured": "This building is already added.",
+      "reauth_successful": "The new token works.",
+      "wrong_building": "That token is for a different building."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "high_water": { "name": "High water" },
+      "lead_float": { "name": "Lead float" },
+      "lag_float": { "name": "Lag float" },
+      "panel_alarm": { "name": "Panel alarm" },
+      "both_running": { "name": "Both pumps running" },
+      "needs_attention": { "name": "Needs attention" },
+      "live_connection": { "name": "Live connection" },
+      "pump_running": { "name": "{pump} running" },
+      "pump_shut_off": { "name": "{pump} shut off" }
+    },
+    "sensor": {
+      "open_alerts": { "name": "Open alerts" },
+      "rain_last_24h": { "name": "Rain in the last 24 hours" },
+      "rain_next_24h": { "name": "Rain in the next 24 hours" },
+      "rain_last_7d": { "name": "Rain in the last 7 days" },
+      "rain_chance": { "name": "Chance of rain" },
+      "pump_current": { "name": "{pump} current" },
+      "pump_runs_today": { "name": "{pump} runs today" },
+      "pump_last_run": { "name": "{pump} last run" },
+      "pump_usual_current": { "name": "{pump} usual current" },
+      "pump_display": {
+        "name": "{pump} panel display",
+        "state": {
+          "lead": "LEAD",
+          "lag": "LAG",
+          "on": "ON",
+          "error": "ERROR"
+        }
+      }
+    },
+    "event": {
+      "alerts": {
+        "name": "Alerts",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "raised": "Raised",
+              "cleared": "Cleared"
+            }
+          }
+        }
+      }
+    },
+    "button": {
+      "silence": { "name": "Silence panel alarm" },
+      "reset": { "name": "Reset panel alarm" }
+    }
+  }
+}

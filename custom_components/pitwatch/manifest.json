@@ -1,0 +1,13 @@
+{
+  "domain": "pitwatch",
+  "name": "PitWatch",
+  "codeowners": ["@dkmcgowan"],
+  "config_flow": true,
+  "documentation": "https://github.com/dkmcgowan/ha-pitwatch",
+  "integration_type": "hub",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/dkmcgowan/ha-pitwatch/issues",
+  "loggers": ["custom_components.pitwatch"],
+  "requirements": [],
+  "version": "0.1.0"
+}
